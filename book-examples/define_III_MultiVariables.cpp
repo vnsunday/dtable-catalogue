@@ -21,7 +21,7 @@ void definition_02() {
 	const char* szV1 = "X";
 	const char* szV2 = "Y";
 
-	M.DefineMapping(szV1);
+	M.DefineMapping(szV1, "Real");
 	M.DefineMapping(szV2);
 
 	M.IfOnlyIf((void*)M.Independent(szV1, szV2),
@@ -30,11 +30,28 @@ void definition_02() {
 
 void definition_03() {
 	Meta M;
-	M.DefineTable("Distribution");
+	M.DefineTable("Distribution", "ValueSet(Y)", "ValueSet(X)");
 }
 
 void definition_04() {
+    Meta M;
+	M.DefineMapping("F", "ValueSet(X)xValueSet(Y)", "Real");
+}
 
+void definition_02_01() {
+	Meta M;
+	M.Equation("M_xy", 0);
+	/*
+	M.If(
+		(void*)M.Equation("M_xy", 0),
+		(void*)M.Independent("X", "Y"));
+	*/
+}
+
+void definition_02_02() {
+	Meta M;
+	M.DefineMapping("F", "Space(X)xSpace(Y)", "Real");
+	
 }
 
 int main(int argc, char **argv) {
