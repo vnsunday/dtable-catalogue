@@ -23,9 +23,11 @@ void definition_02() {
 
 	M.DefineMapping(szV1, "Real");
 	M.DefineMapping(szV2);
-
+	M.DefineMapping(NULL, NULL);
+	/*
 	M.IfOnlyIf((void*)M.Independent(szV1, szV2),
 				(void*)M.Equation("F", "Fx*Fy"));
+	*/
 }
 
 void definition_03() {
@@ -49,11 +51,21 @@ void definition_02_01() {
 }
 
 void definition_02_02() {
+	const char* szName = "Standard Distribution";
 	Meta M;
+	Formula F;
 	M.DefineMapping("F", "Space(X)xSpace(Y)", "Real");
+    
+	F.Fraction(0, 0);
+	F.Multiply("ExpectationX", "ExpectationY");
 	
 }
 
 int main(int argc, char **argv) {
+
+	int n = sizeof(long);
+	int n1 = sizeof(void*);
+
+	printf("Size(long)=%d; size(Pointer)=%d\r\n", n, n1);
     return 0;
 }

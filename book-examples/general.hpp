@@ -21,7 +21,7 @@ public:
 	void DefineMapping(const char* szName, const char* szFromSpace=NULL, const char* szToSpace=NULL) {}
 	void Space(const char* szVariable) {}
 	void Independent(const char* Variable1, const char* Variable2) {}
-	long Equation(const char* szLeft, const char* szRight);
+	long Equation(const char* szLeft, const char* szRight) { return 0l; }
 	std::string Name(const char* szVariable) { return ""; }
 
 	void DefineTable(const char* szName, const char* szRowSet=NULL, const char* szColumnSet=NULL) {}
@@ -29,11 +29,15 @@ public:
     void If(void* Left, void* Right);
 };
 
+// Abstration
 class Formula {
 public:
     int Space(long variable) { return 0; }
     int Fraction(long numerator, long denominator) { return 0; }
-    int Integral() { return 0; }
+    int Integral(long from, long to, long mapping[], long derivative[]) { return 0; }
+    char* Multiply(char* L, char* R) { return 0; }
+    char* SquareRoot(char* V) { return 0;}
+    char* Power(char* x, char* exp) { return 0;}
 };
 
 #endif
