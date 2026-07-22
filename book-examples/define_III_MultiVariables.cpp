@@ -58,7 +58,9 @@ void definition_02_02() {
     
 	F.Fraction(0, 0);
 	F.Multiply("ExpectationX", "ExpectationY");
-	
+	F.Multiply("2PI", "");
+	F.SquareRoot("1-p*p");
+	F.Power("e", "");
 }
 
 int main(int argc, char **argv) {
