@@ -27,6 +27,9 @@ public:
 	void DefineTable(const char* szName, const char* szRowSet=NULL, const char* szColumnSet=NULL) {}
 	void Integral() {}
     void If(void* Left, void* Right);
+
+    void Graph(const char* szName, const char* param[][2]) {}
+    void Unknown(const char* szName) {}
 };
 
 // Abstration
