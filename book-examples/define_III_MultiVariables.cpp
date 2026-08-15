@@ -63,6 +63,14 @@ void definition_02_02() {
 	F.Power("e", "");
 }
 
+void definition_04_01_01() {
+	const char* szName = "";
+
+	Meta M; 
+	M.Series("X");
+	M.Labeled("X", "StronglyLimit-To");
+}
+
 int main(int argc, char **argv) {
 
 	int n = sizeof(long);
@@ -70,4 +78,5 @@ int main(int argc, char **argv) {
 
 	printf("Size(long)=%d; size(Pointer)=%d\r\n", n, n1);
     return 0;
+
 }

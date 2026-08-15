@@ -30,6 +30,9 @@ public:
 
     void Graph(const char* szName, const char* param[][2]) {}
     void Unknown(const char* szName) {}
+    void Series(const char* szName, const char* szType=NULL, int startIndex=1) {}
+
+    bool Labeled(char* object, const char* szLabel)  { return true; }
 };
 
 // Abstration
