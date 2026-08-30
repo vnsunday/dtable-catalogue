@@ -77,6 +77,20 @@ void ex4_5() {
     };
 }
 
+void ex4_7() {
+    Meta M; 
+    const char* szX[][2] = {
+        { "Distribution", "Normal" },
+        { "Count", "25" }
+    };
+    const char* szM[][2] = {
+        { "Significance", ".95" }
+    };
+    M.DefineMapping("X");
+    M.Graph("X", szX);
+    M.Graph("Model", szM);
+}
+
 int main()
 {
     return 0;
