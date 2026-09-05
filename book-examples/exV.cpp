@@ -28,12 +28,22 @@ void ex_2_1() {
 void ex_2_5() {
     Meta M;
     // M.Graph("", );
-    /*
     const char* szM[][2] = {
-        { "", "" }, 
-        { "", "" }
+        { "NullHypothesis", "p=0.9" }, 
+        { "SampleCount", "150" }, 
+        { "HA", "p<0.9" },
+        { "SampleCount", "150" },
+        { "SamplePassed", "132" }, 
+        { "alpha", "0.05" }
     };
-    */
+}
+
+void ex_2_7() {
+    Meta M;
+    const char* szM[][2] = {
+        { "SampleCount", "37" },
+        { "StandardDeviation", "3.5" }
+    };
 }
 
 int main() {
