@@ -46,6 +46,13 @@ void ex_2_7() {
     };
 }
 
+void ex_3_1() {
+    Meta M;
+    const char* szM[][2] = {
+        { "Distribution", "Normal" }
+    };
+}
+
 int main() {
     return 0;
 }
