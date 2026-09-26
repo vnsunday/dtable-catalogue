@@ -15,6 +15,38 @@ Definition of Statistic:
 
     Note: a statistic is a measured function, and specified (not including unknown parameter).
 
+
+Describe samples
+    Use x[i] instead of X[i] (for some reasons)
+
+    One sample, two description method
+    (1) x1, x2, ..., xn
+    (2) Frequency table
+
+            x1 x2 ... xk
+            n1 n2 ... nk
+
+        n1 + n2 + ... + nk = n
+Expectation of samples
+    X¯ = (x1 + x2 + ... + xn) / n
+    X¯ = (x1 * n1 + x2 * n2 + ... + xk * nk) / n
+
+    By definition: X¯ is a random variable (proof?)
+
+    if EX = μ and VX = σ²
+    =>
+        EX¯= μ and
+        VX¯ = σ²/n
+
+    Observation: 
+        VX¯ is n times less than VX => values of X¯ is more stablely around the mean than X values. 
+
+    Note: If the Ground-set (X); N is small and pick samples without duplication.
+
+        need calibration ratio:
+            (N-n)/(N-1).
+
+
 # Confidence Interval
 Confidence Interval: Interval Estimation.
 
