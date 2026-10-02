@@ -15,6 +15,8 @@ int combination(int k, int n) {
 }
 
 class Meta {
+    std::string azLabel[1000];
+    int nLabel; 
 public:
 	static void IfOnlyIf(void* Left, void* Right) {}
 
@@ -44,6 +46,8 @@ public:
     char* Multiply(char* L, char* R) { return 0; }
     char* SquareRoot(char* V) { return 0;}
     char* Power(char* x, char* exp) { return 0;}
+
+    int transform(Formula* f1, Formula* f2) { return 0; }
 };
 
 #endif
