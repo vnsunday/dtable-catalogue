@@ -6,14 +6,14 @@
 #include <string>
 #include <vector>
 
-int read_standard_distribution(const char* szDistributionFile) {
+int read_standard_distribution(const char* szDistributionFile, double* aX, double* aY, int& nData) {
 
 	// Read file Data 
-	double aX[5000];
-	double aY[5000];
-	double* aBuffer[2]{ &aX[0], &aY[0] };
+	//double aX[5000];
+	//double aY[5000];
+	double* aBuffer[2]{ aX, aY };
 	
-	int n = 0;
+    int n = 0;
 	int i;
 	int j;
 
@@ -26,7 +26,6 @@ int read_standard_distribution(const char* szDistributionFile) {
 
 	std::ifstream inputFile(szDistributionFile); // Replace "example.txt" with your file path
 	double* pData;
-	int nData;
 
 	if (inputFile.is_open()) {
 		std::string line;
@@ -122,7 +121,23 @@ int main()
     double Y[10000];
     int n = 0;
 
-    
+    read_standard_distribution("../data/NormalDistribution_Range_10.csv", X, Y, n);
 
+    double alpha = 0.05;
+    double quantile = 1 - alpha  / 2;
+    double quantile_x = -10000000;
+
+    double c1 = 0.0;
+    for (int i=1; i<n; i++) {
+        c1 += (X[i] - X[i-1]) * Y[i];
+
+        if (c1 >= quantile) {
+            quantile_x = X[i];
+            break;
+        }
+    }
+
+    printf("Quantile(p=%0.5f)=%0.5f\r\n", quantile, quantile_x);
+    printf("c1=%0.5f\r\n", c1);
     return 0;
 }
